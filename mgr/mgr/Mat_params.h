@@ -21,7 +21,7 @@ public:
 	double tcr_start;		//Critical starting time
 	double R;				//gas constant
 	double Z;				//Zener-Hollomon parameter
-
+	double G;				//Shear modulus
 
 
 public:

@@ -1,6 +1,5 @@
 #include "PSO.h"
-
-PSO::PSO(double (*fitness_func)(const std::vector<double>&), int num_particles, double w, double c1, double c2)
+PSO::PSO(double (*fitness_func)(const std::vector<double>&, Particle&), int num_particles, double w, double c1, double c2)
     : w(w), c1(c1), c2(c2), fitness_func(fitness_func)
 {
     std::mt19937 rnd(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count()));
@@ -13,11 +12,15 @@ PSO::PSO(double (*fitness_func)(const std::vector<double>&), int num_particles, 
 
 void PSO::run(int iterations, double precision) 
 {
+    std::string time_val = "../txt_files/time_values.txt";
+    Time_values t(time_val);
+
     for (int iter = 0; iter < iterations; iter++) 
     {
         for (auto& particle : particles)
         {
-            particle.make_a_step(fitness_func, w, c1, c2);
+            particle.count_A();
+            particle.make_a_step(fitness_func, w, c1, c2, t);
         }
         for (auto& particle : particles)
         {

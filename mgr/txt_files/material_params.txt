@@ -1,11 +1,12 @@
 epsilon: 0.1
-T: 300
+T: 747.15
 mi: 1.2
 ro_poprzednie: 0.0001
 ro_t_tcr: 0.0002
 t_poprzednie: 0.01
-Q: 15001
+Q: 265764
 b: 0.25
 tcr_start: 0.005
 R: 8.314
-D: 0.05
+D: 4e-5
+G: 4.5e10
