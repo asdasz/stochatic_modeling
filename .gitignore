@@ -1,5 +1,5 @@
 **/x64
 **/Sample-Test1/packages
 *.sln
-**.vcxproj
+**.vcxproj**
 **.vs
